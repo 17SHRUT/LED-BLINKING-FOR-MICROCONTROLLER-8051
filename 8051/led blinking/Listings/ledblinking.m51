@@ -1,0 +1,84 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    07/21/2021  18:19:41  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\blink led.obj TO .\Objects\ledblinking PRINT (.\Listings\ledblinking.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\blink led.obj (BLINK_LED)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\ledblinking (BLINK_LED)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     000FH     UNIT         ?PR?DELAY?BLINK_LED
+            CODE    080FH     000CH     UNIT         ?C_C51STARTUP
+            CODE    081BH     0005H     UNIT         ?PR?MAIN?BLINK_LED
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\ledblinking (BLINK_LED)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?BLINK_LED
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\ledblinking (BLINK_LED)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        BLINK_LED
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:0800H         PUBLIC        delay
+  C:081BH         PUBLIC        main
+  -------         PROC          DELAY
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0800H         LINE#         3
+  C:0800H         LINE#         4
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/21/2021  18:19:41  PAGE 2
+
+
+  C:0800H         LINE#         6
+  C:080EH         LINE#         7
+  -------         ENDPROC       DELAY
+  -------         PROC          MAIN
+  C:081BH         LINE#         9
+  C:081BH         LINE#         10
+  C:081BH         LINE#         11
+  C:081BH         LINE#         12
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        BLINK_LED
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY?BLINK_LED
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0014H BYTE ( 0%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=35
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)
